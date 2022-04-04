@@ -1,10 +1,8 @@
 package vegetables;
 
-import java.lang.invoke.WrongMethodTypeException;
-import java.util.Locale;
-
 public abstract class Vegetable {
 
+    protected String name;
     private final double calorie;
     private final double proteins;
     private final double fat;
@@ -14,7 +12,6 @@ public abstract class Vegetable {
     private double weight;
 
     public Vegetable(double calorie, double proteins, double weight, double fat, double carbohydrates) {
-
         this.carbohydrates = carbohydrates;
         this.fat = fat;
         this.calorie = calorie;
@@ -51,9 +48,12 @@ public abstract class Vegetable {
         return calories;
     }
 
-    public Double getOption(String option) {
+    public String getName() {
+        return name;
+    }
 
-        switch (option.toLowerCase(Locale.ROOT)) {
+    public Double getOption(String option) {
+        switch (option.toLowerCase()) {
             case "calories": {
                 return calories;
             }
@@ -73,6 +73,6 @@ public abstract class Vegetable {
                 return weight;
             }
         }
-        throw new WrongMethodTypeException();
+        throw new IllegalArgumentException("Wrong option: " + option);
     }
 }

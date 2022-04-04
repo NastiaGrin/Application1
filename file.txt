@@ -1,4 +1,3 @@
 tomato 23
-potato 33
-tomato 11
+potato 3
 lettuce 33

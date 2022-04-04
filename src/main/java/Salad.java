@@ -8,7 +8,6 @@ public class Salad {
     private double calories;
 
     public Salad(List<Vegetable> vegetables) {
-
         this.vegetables = vegetables;
         this.calories = 0;
         for (Vegetable vegetable : vegetables) {
@@ -17,9 +16,8 @@ public class Salad {
     }
 
     public void sort(String option) {
-
-        VegetableComparator vegetableComparator = new VegetableComparator(option);
-        vegetables.sort(vegetableComparator);
+        VegetableComparator comparator = new VegetableComparator(option);
+        vegetables.sort(comparator);
         for (Vegetable vegetable : vegetables) {
             System.out.print(vegetable.getClass().getSimpleName() +
                     " " + vegetable.getOption(option) + " ");
@@ -27,7 +25,6 @@ public class Salad {
     }
 
     public void findVegetables(double minCalories, double maxCalories) {
-
         int numberOfVegetables = 0;
         for (Vegetable vegetable : vegetables) {
             if (vegetable.getCalories() > minCalories && vegetable.getCalories() < maxCalories) {

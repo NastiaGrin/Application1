@@ -2,91 +2,40 @@ import vegetables.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class StringToVegetable {
 
-    public static List<Vegetable> change(List<Double> weights, List<String> names, Scanner scanner) {
-        List<Vegetable> vegetables = new ArrayList<>();
-        boolean sameVegetable;
-        for (int i = 0; i < weights.size(); i++) {
-            switch (names.get(i).toLowerCase()) {
+    public static List<Vegetable> change(List<Record> records) {
+        List<Vegetable> vegetables = new ArrayList<>(records.size());
+        for (Record record : records) {
+            Vegetable vegetable;
+            switch (record.getName()) {
                 case "potato": {
-                    sameVegetable = false;
-                    for (Vegetable vegetable : vegetables) {
-                        if (vegetable instanceof Potato) {
-                            vegetable.setWeight(vegetable.getWeight() + weights.get(i));
-                            sameVegetable = true;
-                            break;
-                        }
-                    }
-                    if (!sameVegetable) {
-                        vegetables.add(new Potato(weights.get(i)));
-                    }
+                    vegetable = new Potato(record.getWeight());
                     break;
                 }
                 case "tomato": {
-                    sameVegetable = false;
-                    for (Vegetable vegetable : vegetables) {
-                        if (vegetable instanceof Tomato) {
-                            vegetable.setWeight(vegetable.getWeight() + weights.get(i));
-                            sameVegetable = true;
-                        }
-                    }
-                    if (!sameVegetable) {
-                        vegetables.add(new Tomato(weights.get(i)));
-                    }
+                    vegetable = new Tomato(record.getWeight());
                     break;
                 }
                 case "lettuce": {
-                    sameVegetable = false;
-                    for (Vegetable vegetable : vegetables) {
-                        if (vegetable instanceof Lettuce) {
-                            vegetable.setWeight(vegetable.getWeight() + weights.get(i));
-                            sameVegetable = true;
-                            break;
-                        }
-                    }
-                    if (!sameVegetable) {
-                        vegetables.add(new Lettuce(weights.get(i)));
-                    }
+                    vegetable = new Lettuce(record.getWeight());
                     break;
                 }
                 case "pepper": {
-                    sameVegetable = false;
-                    for (Vegetable vegetable : vegetables) {
-                        if (vegetable instanceof Pepper) {
-                            vegetable.setWeight(vegetable.getWeight() + weights.get(i));
-                            sameVegetable = true;
-                            break;
-                        }
-                    }
-                    if (!sameVegetable) {
-                        vegetables.add(new Pepper(weights.get(i)));
-                    }
+                    vegetable = new Pepper(record.getWeight());
                     break;
                 }
                 case "cucumber": {
-                    sameVegetable = false;
-                    for (Vegetable vegetable : vegetables) {
-                        if (vegetable instanceof Cucumber) {
-                            vegetable.setWeight(vegetable.getWeight() + weights.get(i));
-                            sameVegetable = true;
-                            break;
-                        }
-                    }
-                    if (!sameVegetable) {
-                        vegetables.add(new Cucumber(weights.get(i)));
-                    }
+                    vegetable = new Cucumber(record.getWeight());
                     break;
                 }
-                default: {
-                    System.out.println("Wrong data. Try again.");
-                    ReadVegetablesFromFile.reader(names, weights, scanner);
-                    break;
-                }
+                default:
+                    throw new IllegalArgumentException("Unknown vegetable: " + record.getName());
             }
+            vegetables.add(vegetable);
         }
+
         return vegetables;
     }
 }
