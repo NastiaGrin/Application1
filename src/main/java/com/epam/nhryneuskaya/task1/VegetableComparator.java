@@ -1,4 +1,6 @@
-import vegetables.Vegetable;
+package com.epam.nhryneuskaya.task1;
+
+import com.epam.nhryneuskaya.task1.vegetables.Vegetable;
 
 import java.util.Comparator;
 
@@ -7,7 +9,6 @@ public class VegetableComparator implements Comparator<Vegetable> {
     private final String option;
 
     public VegetableComparator(String option) {
-        super();
         this.option = option;
     }
 

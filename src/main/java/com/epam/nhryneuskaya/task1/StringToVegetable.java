@@ -1,21 +1,19 @@
-import vegetables.*;
+package com.epam.nhryneuskaya.task1;
+
+import com.epam.nhryneuskaya.task1.vegetables.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StringToVegetable {
 
-    public static List<Vegetable> change(List<Record> records) {
+    public static List<Vegetable> convert(List<Record> records) {
         List<Vegetable> vegetables = new ArrayList<>(records.size());
         for (Record record : records) {
             Vegetable vegetable;
             switch (record.getName()) {
-                case "potato": {
-                    vegetable = new Potato(record.getWeight());
-                    break;
-                }
-                case "tomato": {
-                    vegetable = new Tomato(record.getWeight());
+                case "cucumber": {
+                    vegetable = new Cucumber(record.getWeight());
                     break;
                 }
                 case "lettuce": {
@@ -26,8 +24,12 @@ public class StringToVegetable {
                     vegetable = new Pepper(record.getWeight());
                     break;
                 }
-                case "cucumber": {
-                    vegetable = new Cucumber(record.getWeight());
+                case "potato": {
+                    vegetable = new Potato(record.getWeight());
+                    break;
+                }
+                case "tomato": {
+                    vegetable = new Tomato(record.getWeight());
                     break;
                 }
                 default:
