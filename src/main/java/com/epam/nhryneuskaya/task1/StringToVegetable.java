@@ -7,6 +7,9 @@ import java.util.List;
 
 public final class StringToVegetable {
 
+    private StringToVegetable() {
+    }
+
     public static List<Vegetable> convert(List<Record> records) {
         List<Vegetable> vegetables = new ArrayList<>(records.size());
         for (Record record : records) {

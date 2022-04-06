@@ -7,16 +7,18 @@ import java.util.Scanner;
 public class VegetableApplication {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        List<Record> records = ReadVegetablesFromFile.reader(scanner);
+        System.out.println("Enter way to your file:");
+        String filename = scanner.nextLine();
+
+        List<Record> records = FileToRecords.read(filename);
         Salad salad = new Salad(StringToVegetable.convert(records));
         System.out.println("Calories in salad: " + salad.getCalories() + "Calories");
 
-        System.out.println("Enter sort option: calorie, proteins, fat, carbohydrates, calories, weight");
+        System.out.println("Enter sort option: calorie, calories, carbohydrates, fat, proteins, weight");
         String option = scanner.nextLine();
         salad.sort(option);
-        System.out.println();
 
-        System.out.println("Enter minimum and maximum calories");
+        System.out.println("\n Enter minimum and maximum calories:");
         int minCalories;
         int maxCalories;
         if (!scanner.hasNextInt()) {

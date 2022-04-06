@@ -6,19 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReadVegetablesFromFile {
+public class FileToRecords {
 
-    public static List<Record> reader(Scanner scanner) throws IOException {
+    public static List<Record> read(String filename) throws IOException {
         System.out.println("Create txt file with name of vegetable and it weight. " +
                 "Split it with space. " +
                 "You can chose cucumber, lettuce, pepper, potato, tomato.");
 
-        System.out.println("Enter way to your file.");
-        String filename = scanner.nextLine();
-
         List<Record> records = new ArrayList<>();
 
-        try (InputStream is = ReadVegetablesFromFile.class.getClassLoader().getResourceAsStream(filename);
+        try (InputStream is = FileToRecords.class.getClassLoader().getResourceAsStream(filename);
              Reader r = new InputStreamReader(is, StandardCharsets.UTF_8);
              BufferedReader br = new BufferedReader(r)) {
 
