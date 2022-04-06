@@ -25,10 +25,10 @@ public class VegetableApplication {
             minCalories = scanner.nextInt();
             maxCalories = scanner.nextInt();
             if (minCalories < 0) {
-                throw new IllegalArgumentException("Wrong minimum calories: " +minCalories);
+                throw new IllegalArgumentException("Wrong minimum calories: " + minCalories);
             }
-            if (maxCalories < 0 ||maxCalories < minCalories) {
-                throw new IllegalArgumentException("Wrong maximum calories: " +maxCalories);
+            if (maxCalories < 0 || maxCalories < minCalories) {
+                throw new IllegalArgumentException("Wrong maximum calories: " + maxCalories);
             }
         }
 

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ReadVegetablesFromFile {
+
     public static List<Record> reader(Scanner scanner) throws IOException {
         System.out.println("Create txt file with name of vegetable and it weight. " +
                 "Split it with space. " +

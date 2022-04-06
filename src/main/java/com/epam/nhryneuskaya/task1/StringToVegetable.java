@@ -5,7 +5,7 @@ import com.epam.nhryneuskaya.task1.vegetables.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringToVegetable {
+public final class StringToVegetable {
 
     public static List<Vegetable> convert(List<Record> records) {
         List<Vegetable> vegetables = new ArrayList<>(records.size());
