@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class VegetableApplication {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Create txt file with name of vegetable and it weight. " +
+                "Split it with space. " +
+                "You can chose cucumber, lettuce, pepper, potato, tomato.");
         System.out.println("Enter way to your file:");
         String filename = scanner.nextLine();
 

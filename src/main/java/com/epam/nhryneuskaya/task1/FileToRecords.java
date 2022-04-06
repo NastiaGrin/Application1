@@ -8,9 +8,6 @@ import java.util.List;
 public class FileToRecords {
 
     public static List<Record> read(String filename) throws IOException {
-        System.out.println("Create txt file with name of vegetable and it weight. " +
-                "Split it with space. " +
-                "You can chose cucumber, lettuce, pepper, potato, tomato.");
 
         List<Record> records = new ArrayList<>();
 
