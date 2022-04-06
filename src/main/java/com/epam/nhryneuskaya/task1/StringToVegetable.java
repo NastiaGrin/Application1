@@ -12,6 +12,7 @@ public final class StringToVegetable {
 
     public static List<Vegetable> convert(List<Record> records) {
         List<Vegetable> vegetables = new ArrayList<>(records.size());
+
         for (Record record : records) {
             Vegetable vegetable;
             switch (record.getName()) {

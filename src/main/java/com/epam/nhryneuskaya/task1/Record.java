@@ -2,8 +2,8 @@ package com.epam.nhryneuskaya.task1;
 
 public class Record {
 
-    private String name;
-    private double weight;
+    private final String name;
+    private final double weight;
 
     public Record(String name, double weight) {
         this.name = name;

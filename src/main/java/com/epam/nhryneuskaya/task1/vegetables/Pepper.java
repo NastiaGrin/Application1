@@ -6,4 +6,3 @@ public class Pepper extends Vegetable {
         super("pepper", 27, 5.3, 0.1, 1.3, weight);
     }
 }
-

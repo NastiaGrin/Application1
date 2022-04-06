@@ -2,7 +2,7 @@ package com.epam.nhryneuskaya.task1.vegetables;
 
 public abstract class Vegetable {
 
-    protected String name;
+    private final String name;
     private final double calorie;
     private final double calories;
     private final double carbohydrates;
