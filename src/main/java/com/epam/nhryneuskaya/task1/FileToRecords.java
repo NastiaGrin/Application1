@@ -5,7 +5,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileToRecords {
+public final class FileToRecords {
+
+    private FileToRecords() {
+    }
 
     public static List<Record> read(String filename) throws IOException {
 
@@ -17,19 +20,17 @@ public class FileToRecords {
 
             String line;
             while ((line = br.readLine()) != null) {
-                String part1 = line.split(" ")[0];
-                String part2 = line.split(" ")[1];
+                String name = line.split(" ")[0];
+                double weight = Double.parseDouble(line.split(" ")[1]);
 
-                double weight = Double.parseDouble(part2);
                 if (weight <= 0) {
                     throw new IllegalArgumentException("Wrong weight in the line: " + line);
                 }
 
-                records.add(new Record(part1, weight));
+                records.add(new Record(name, weight));
             }
         }
 
         return records;
     }
 }
-

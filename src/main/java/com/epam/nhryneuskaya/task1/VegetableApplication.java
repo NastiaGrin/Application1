@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class VegetableApplication {
+
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Create txt file with name of vegetable and it weight. " +
@@ -15,7 +16,7 @@ public class VegetableApplication {
 
         List<Record> records = FileToRecords.read(filename);
         Salad salad = new Salad(StringToVegetable.convert(records));
-        System.out.println("Calories in salad: " + salad.getCalories() + "Calories");
+        System.out.println("Calories in salad: " + salad.getCalories() + " calories");
 
         System.out.println("Enter sort option: calorie, calories, carbohydrates, fat, proteins, weight");
         String option = scanner.nextLine();
@@ -29,6 +30,7 @@ public class VegetableApplication {
         } else {
             minCalories = scanner.nextInt();
             maxCalories = scanner.nextInt();
+
             if (minCalories < 0) {
                 throw new IllegalArgumentException("Wrong minimum calories: " + minCalories);
             }
